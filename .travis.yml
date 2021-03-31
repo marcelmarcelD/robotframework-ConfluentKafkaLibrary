@@ -12,6 +12,7 @@ before_install:
 
 script:
   - python3 -m robot -d ./docs examples/
+  - python3 -m robot.libdoc -f html src/ConfluentKafkaLibrary docs/index.html
 
 deploy:
   provider: pages
@@ -19,4 +20,4 @@ deploy:
   github_token: $GITHUB_TOKEN
   local_dir: docs
   on:
-    branch: master
+    branch: travis-update
